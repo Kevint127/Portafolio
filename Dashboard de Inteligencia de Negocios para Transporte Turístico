@@ -1,0 +1,42 @@
+## 📝1. Resumen del Proyecto
+
+Este proyecto consiste en el desarrollo de un panel de control interactivo diseñado para analizar el flujo de ingresos y la rentabilidad geográfica de una empresa de transporte. El objetivo es proporcionar una visión clara sobre dónde se genera el mayor valor y cuál es el comportamiento de compra por zona.
+
+## 🛠️ 2. Tecnologías Utilizadas
+
+- **Power BI Desktop:** Modelado de datos y visualización.
+- **DAX (Data Analysis Expressions):** Creación de medidas personalizadas.
+- **Dataset:** Datos de ventas/servicios (menciona si usaste Excel o SQL como fuente).
+
+## 📊 3. Lógica de Negocio (Medidas DAX)
+
+Para asegurar la precisión del análisis, desarrollé las siguientes métricas clave:
+
+- **Ingresos Totales:** `SUM(Ventas[Ingresos])`
+- **Ticket Promedio:** `DIVIDE([Total Ventas], [Total Servicios], 0)`
+    - *Nota: Se utilizó la función DIVIDE para manejar errores de división por cero de forma segura.*
+
+## 📈 4. Visualizaciones Clave
+### A. Rentabilidad por Zona (Ticket Promedio)
+
+- **Visual:** Gráfico de barras.
+- **Insight:** Permite identificar qué zonas atraen clientes de mayor valor adquisitivo, lo que ayuda a priorizar esfuerzos de marketing.
+
+### B. Distribución de Ingresos por Destino
+
+- **Visual:** Treemap / Gráfico de Anillos.
+- **Insight:** Identificación visual rápida de los destinos que representan el "pareto" (el 80%) de los ingresos.
+
+### C. Desempeño Geográfico (Ventas por Zona)
+
+- **Visual:** Mapa interactivo / Matriz con barras de datos.
+- **Insight:** Ubicación espacial de la demanda para optimizar la logística de la flota.
+
+## 💡 5. Hallazgos (Insights)
+
+- "La **Zona Norte** tiene el ticket promedio más alto, a pesar de no ser la que tiene más volumen de servicios."
+- "El **Destino X** genera el 40% de los ingresos totales, lo que sugiere una dependencia crítica de esa ruta."
+## 🖼️ 6. Vista Previa del Dashboard
+se adjuntan imagenes 
+## 🖼️ 6. Vista Previa del Dashboard
+se adjuntan evidencias
