@@ -1,0 +1,53 @@
+### 1. Introducción (El "Por qué")
+
+"El objetivo de este proyecto es analizar el rendimiento de una flota de transporte turístico para identificar las rutas más rentables y los horarios de mayor demanda. Se busca optimizar la asignación de vehículos para maximizar los ingresos mensuales."
+
+### 2. Herramientas Utilizadas
+
+- **SQL (PostgreSQL/MySQL):** Para la limpieza, transformación y consulta de la base de datos.
+- **Excel / Power BI:** Para la visualización de los resultados finales.
+
+### 3. Estructura de los Datos (El "Qué")
+
+Menciona brevemente qué tablas analizaste. Por ejemplo:
+
+- `Servicios`: ID, fecha, ruta, ID_vehículo, tarifa.
+- `Gastos`: Combustible, comisiones, mantenimiento.
+- `Vehículos`: Tipo (Van, Lujo, Autobús), capacidad.
+
+### 4. Consultas Clave (La "Evidencia")
+
+Aquí es donde pegas tu código SQL. No pongas todo, solo lo más impresionante. Por ejemplo, una consulta que use `GROUP BY` y `SUM` para calcular ingresos por categoría:
+
+SELECT
+v.tipo_unidad,
+  COUNT(s.id_servicio) AS total_servicios,
+    SUM(s.tarifa) AS ingresos_totales,
+  ROUND(AVG(s.tarifa), 2) AS promedio_por_servicio
+    FROM servicios s
+  JOIN vehiculos v ON s.id_vehiculo = v.id_vehiculo
+    GROUP BY v.tipo_unidad
+    ORDER BY ingresos_totales DESC;
+
+FROM viajes
+  WHERE destino = tulum
+GROUP BY vehiculo;
+
+SELECT 
+    Vehiculo,
+    SUM(Ingreso) AS total
+FROM Viajes
+  WHERE Ingreso > 100
+  GROUP BY Vehiculo
+  HAVING SUM(Ingreso) > 5000;
+
+### 5. Hallazgos y Resultados (El "Valor")
+
+En lugar de decir "hice una tabla", di qué descubriste:
+
+- **Hallazgo 1:** "Las unidades de lujo representan el 20% de la flota pero generan el 45% de la utilidad neta."
+- **Hallazgo 2:** "Se identificó una caída en las ventas los días martes, sugiriendo la implementación de promociones específicas para ese día."
+
+### 6. Conclusión
+
+"Gracias a este análisis, se determinó que reasignar dos unidades de la ruta estándar a la ruta de lujo durante los fines de semana podría incrementar los ingresos en un 12%."
